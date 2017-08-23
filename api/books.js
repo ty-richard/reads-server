@@ -32,5 +32,24 @@ router.post('/', (req, res, next) => {
 
 })
 
+router.put('/:id', (req, res, next) => {
+    queries
+        .books
+        .update(req.params.id, req.body)
+        .then(books => {
+            res.json(books[0])
+        })
+})
+
+router.delete('/:id', (req, res) => {
+    queries
+        .books
+        .delete(req.params.id)
+        .then(() => {
+            res.json({
+                deleted: true
+            })
+        })
+})
 
 module.exports = router

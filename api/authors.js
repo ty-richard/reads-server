@@ -33,6 +33,26 @@ router.post('/', (req, res, next) => {
 
 })
 
+router.put('/:id', (req, res, next) => {
+    queries
+        .authors
+        .update(req.params.id, req.body)
+        .then(authors => {
+            res.json(authors[0])
+        })
+})
+
+router.delete('/:id', (req, res) => {
+    queries
+        .authors
+        .delete(req.params.id)
+        .then(() => {
+            res.json({
+                deleted: true
+            })
+        })
+})
+
 
 
 module.exports = router
