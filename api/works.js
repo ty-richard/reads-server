@@ -24,6 +24,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res, next) => {
     queries
+        .works
         .create(req.body)
         .then(works => {
             res.json(works[0])

@@ -24,6 +24,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res, next) => {
     queries
+        .books
         .create(req.body)
         .then(books => {
             res.json(books[0])

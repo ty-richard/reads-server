@@ -25,6 +25,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res, next) => {
     queries
+        .authors
         .create(req.body)
         .then(authors => {
             res.json(authors[0])
