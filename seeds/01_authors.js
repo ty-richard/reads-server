@@ -1,4 +1,4 @@
-const authors = require("../authors");
+const authors = require("../data/authors");
 
 exports.seed = function(knex, Promise) {
     return knex.raw("TRUNCATE authors RESTART IDENTITY CASCADE")
